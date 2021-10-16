@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
+import { AuthWrapper } from '../components/auth';
+import styled from 'styled-components';
+import oc from 'open-color';
+import { Route } from 'react-router';
+import Login from 'containers/auth/Login';
 
+// 로그인, 회원가입 컴포넌트 라우트 설정할곳
 class Auth extends Component {
 
     render () {
         return (
-            <div>
-                Auth Page
-            </div>
+            <BackColor>
+                <AuthWrapper>
+                    <Route path="/auth/login" component={Login}/>
+                </AuthWrapper>
+            </BackColor>
         );
     }
 }
+
+const BackColor = styled.div`
+    width: 100vw;
+    height: 100vh;
+    background: ${oc.violet[6]};
+`;
 
 export default Auth;

@@ -7,8 +7,8 @@
 - components : 상세 컴포넌트 폴더
 - Containers : 컴포넌트를 담는 컨테이너
 - lib : 기타 라이브러리 (이미지, 컬러)
-- Pages : 컨테이너들을 담을 상위 페이지
-- Redux : 상태관리들을 위한 폴더
+- Pages : 라우트 관련 컴포넌트들
+- Redux : redux 관리
 
 ---
 
