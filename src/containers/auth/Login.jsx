@@ -27,7 +27,7 @@ class Login extends Component {
         const { handleChange } = this;
         return (
             <AuthContent title="로그인">
-                <InputWithLabel label="아이디" name="id" value={id} onChange={handleChange} placeholder="username"/>
+                <InputWithLabel label="아이디" name="id" value={id} onChange={handleChange} placeholder="id"/>
                 <InputWithLabel label="비밀번호" name="password" value={password} onChange={handleChange} placeholder="password"/>
                 <AuthButton>로그인</AuthButton>
                 <RightAlignedLink to="/auth/register">회원가입</RightAlignedLink>
