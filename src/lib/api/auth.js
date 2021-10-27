@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-export const localRegister = ({id, email, password}) => axios.post('/auth/register');
-export const localLogin = ({id, password}) => axios.post('/auth/login');
+export const localRegister = ({id, email, password}) => axios.post('/auth/register', null);
+export const localLogin = ({id, password}) => axios.post('/auth/login', null);
 
 export const logout = () => axios.post('/auth/logout');
