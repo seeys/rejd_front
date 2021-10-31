@@ -27,7 +27,7 @@ _ex) [add] styeld-components 모듈 추가 or [update] login버튼 css 수정_
 - 개인 리포지터리로 fork 후 브랜치 생성
 - 코드 update하고 rejd 원본 리포지터리로 pr 요청
 - 모여서 회의 후 merge 결정
-
+- PR당 리뷰 2개 이상 시 머지 가능
 ---
 
 ## Issues
