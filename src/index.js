@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Root from './Root';
+import configureStore from './redux/configureStore';
 
+const store = configureStore();
 ReactDOM.render(
   <React.StrictMode>
-    <Root/>
+    <Root store={store}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
