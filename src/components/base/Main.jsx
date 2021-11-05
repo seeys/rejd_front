@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import {media} from '../lib/styleUtil';
+import { media } from '../../lib/styleUtil';
 
 class Main extends Component {
     render () {

@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import {media} from '../lib/styleUtil';
-import { Link } from 'react-router-dom';
+import {media} from '../../lib/styleUtil';
 
 
-class Header extends Component {
+class Footer extends Component {
     render () {
         return (
             <div>
-            <HeadBackground>
-            <HeadWrapper>
-            REJD문제풀이 사이트   
-            <Spacer/>
-            <Link to= 'auth/login'  style={{ textDecoration: 'none'}}>로그인/회원가입</Link>
-            </HeadWrapper>     
-            </HeadBackground>
+                <Background>
+                <FootWrapper>
+                <Spacer/>
+                Rejd 문규진,민정,성호,세은,치영
+                <Spacer/>
+                </FootWrapper>
+                </Background>
             </div>
         );
     }
 }
 
-
-const HeadWrapper = styled.div`
+const FootWrapper = styled.div`
     width: 1200px;
-    height: 55px;
+    height: 100px;
     font-color: #FFFFFF;
     display: flex;
     flex-direction: row;
@@ -40,19 +38,15 @@ const HeadWrapper = styled.div`
     `}
 `
 
-const HeadBackground = styled.div`
+const Background = styled.div`
     background: #9A2EFE;
-    color: #FFFFFF;
+    font-color: #FFFFFF;
     display: flex;
     justify-content: center;
     height: auto;
-    
 `
-
 const Spacer = styled.div`
     flex-grow: 1;
 `;
 
-
-
-export default Header;
+export default Footer;

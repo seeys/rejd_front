@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import {media} from '../lib/styleUtil';
+import {media} from '../../lib/styleUtil';
+import { Link } from 'react-router-dom';
 
 
-class Footer extends Component {
+class Header extends Component {
     render () {
         return (
             <div>
-                <Background>
-                <FootWrapper>
-                <Spacer/>
-                Rejd 문규진,민정,성호,세은,치영
-                <Spacer/>
-                </FootWrapper>
-                </Background>
+            <HeadBackground>
+            <HeadWrapper>
+            REJD문제풀이 사이트   
+            <Spacer/>
+            <Link to= 'auth/login'  style={{ textDecoration: 'none'}}>로그인/회원가입</Link>
+            </HeadWrapper>     
+            </HeadBackground>
             </div>
         );
     }
 }
 
-const FootWrapper = styled.div`
+
+const HeadWrapper = styled.div`
     width: 1200px;
-    height: 100px;
+    height: 55px;
     font-color: #FFFFFF;
     display: flex;
     flex-direction: row;
@@ -38,15 +40,19 @@ const FootWrapper = styled.div`
     `}
 `
 
-const Background = styled.div`
+const HeadBackground = styled.div`
     background: #9A2EFE;
-    font-color: #FFFFFF;
+    color: #FFFFFF;
     display: flex;
     justify-content: center;
     height: auto;
+    
 `
+
 const Spacer = styled.div`
     flex-grow: 1;
 `;
 
-export default Footer;
+
+
+export default Header;

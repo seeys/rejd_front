@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Main from '../components/Main';
-import Footer from 'components/Footer';
-import Header from 'components/Header';
+import Main from '../components/base/Main';
+import Footer from 'components/base/Footer';
+import Header from 'components/base/Header';
 
 class Home extends Component {
 
