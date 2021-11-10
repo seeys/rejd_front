@@ -69,9 +69,39 @@ class Register extends Component {
         if(name.indexOf('password') > -1 || !validation) return;
     }
 
+    handleLocalRegister = async () => {
+        const { form, AuthActions, error, history } = this.props;
+        const { id, password, passwordConfirm, email } = form.toJS();
+    
+        const { validate } = this;
+        if(error) return;
+        if(!validate['id'](id)
+        || !validate['password'](password)
+        || !validate['passwordConfirm'](passwordConfirm)
+        || !validate['email'](email)){
+          return;
+        }
+    
+        try {
+          await AuthActions.localRegister({
+            id, password, email
+          });
+          const loggedInfo = this.props.result.toJS();
+    
+          //storage.set('loggedInfo',loggedInfo);
+          //userActions.setLoggedInfo(loggedInfo);
+          //userActions.setValidated(true);
+          console.log(loggedInfo);
+          history.push('/user/login');
+        } catch(e) {
+          console.log(e);
+          this.setError('알 수 없는 에러가 발생했습니다.')
+        }
+      }
+
     render() {
         const { id, email, password, passwordConfirm } = this.props.form.toJS();
-        const { handleChange } = this;
+        const { handleChange, handleLocalRegister } = this;
         const { error } = this.props;
 
         return (
@@ -83,7 +113,7 @@ class Register extends Component {
                 {
                     error && <AuthError>{error}</AuthError>
                 }
-                <AuthButton>회원가입</AuthButton>
+                <AuthButton onClick={handleLocalRegister}>회원가입</AuthButton>
                 <RightAlignedLink to="/auth/login">로그인</RightAlignedLink>
             </AuthContent>
         );
@@ -93,7 +123,8 @@ class Register extends Component {
 export default connect(
     (state) => ({
         form: state.auth.getIn(['register', 'form']),
-        error: state.auth.getIn(['register', 'error'])
+        error: state.auth.getIn(['register', 'error']),
+        result: state.auth.get('result')
     }),
     (dispatch) => ({
         AuthActions: bindActionCreators(authActions, dispatch)
